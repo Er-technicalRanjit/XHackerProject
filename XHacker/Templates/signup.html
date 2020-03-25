@@ -1,0 +1,156 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<style>
+    body{
+    background-image: url("{% static '5e53ffe0de222.png' %}");
+
+
+    }
+</style>
+<head>
+
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+
+    <div class="container-fluid bg-transparent mt-2">
+
+
+        <div>
+            {% if user.is_authenticated %}
+                <a href=""><button class="btn btn-dark float-right mr-4 mt-2 rounded-pill">{{ user.username }}</button></a>
+                <a href="/logout"><input type="button" class="btn btn-danger float-right mr-4 mt-2 rounded-pill" value="Logout"content=""></a>
+      {% else %}          
+
+
+<a href="/signin"><input type="button" class="btn btn-danger float-right mr-4 mt-2 rounded-pill" value="Login"content=""></a>
+ <a href="/"><input type="button" class="btn btn-primary float-right mt-2 mr-4 rounded-pill " value="website"></a>
+            {% endif %}
+      </div>
+    </div>
+
+
+
+</head>
+
+{% block head %}
+<body>
+<div class="container">
+
+        <div class="float-left">
+          <img src="{% static 'x3.png' %}" class="img-fluid col-3" alt="Technical Ranjit"/>
+
+
+        </div>
+
+        <form method="post" action="" class="float-right pr-5 mt-0" onsubmit="return validation()">
+
+
+
+
+            {% csrf_token %}
+
+            <div class="form-group ml-3">
+         {% if messages %}
+         <div class="messages">
+             {% for message in messages %}
+             <li class="alert alert-danger">{{ message }}</li>
+             {% endfor %}
+         </div>
+     {% endif %}
+
+    </div>
+
+          <h1 class="text-white">Sign Up Today <small style="font-size: 18px;  color:green; font-weight: bolder;"> To get access</small></h1>
+
+
+
+
+
+          <table  class=" table table-borderless">
+
+            <h4 class="" style="color:red;">**All are required</h4>
+
+              <tr>
+                 <div class="form-group has-success">
+                <td><label for="" class="control-label-static text-white "><strong>Username:<span class="text-danger">*</span></strong></label></td>
+                <div>
+                  <td>   {{ form.username }}
+                      <span class=" text-danger">{{ form.username.errors }}</span>
+                  </td>
+                  <td><span class="glyphicon glyphicon-ok control-label-static " style="color:red;" id="us"></span></td>
+
+              </tr>
+            </div>
+            </div>
+
+
+              <tr>
+                <td><label for="" class="control-label text-white"><strong>Email:<span class="text-danger">*</span></strong></label></td>
+                  <td>{{ form.email }}<span class=" text-danger">{{ form.email.errors }}</span></td>
+                  <td><span style="color:red;" id="em"></span></td>
+
+              </tr>
+
+
+
+              <tr>
+                <td><label for="" class="control-label text-white"><strong>First Name:<span class="text-danger">*</span></strong></label></td>
+                  <td>{{ form.first_name}}</td>
+                   <td><span style="color:red;" id="po"></span></td>
+
+              </tr>
+
+              <tr>
+                <td><label for="" class="control-label text-white"><strong>Last Name:<span class="text-danger">*</span></strong></label></td>
+                  <td>
+                      {{ form.last_name }}
+              </td>
+
+               <td><span style="color:red;" id="ge"></span></td>
+
+              </tr>
+
+              <tr>
+                <td><label for="" class="control-label text-white"><strong>Password:<span class="text-danger">*</span></strong></label></td>
+                  <td>{{form.password }}<span class=" text-danger">{{ form.password.errors }}</span></td>
+
+                   <td><span style="color:red;" id="pa"></span></td>
+
+              </tr>
+              <tr>
+                <td><label for="" class="control-label text-white"><strong>ConfirmPassword:<span class="text-danger">*</span></strong></label></td>
+                  <td>{{ form.confirm_password }}<span class=" text-danger"> {{ form.confirm_password.errors }}</span></td>
+
+                   <td><span style="color:red;" id="conpa"></span></td>
+
+              </tr>
+
+              <tr>
+                <td>
+                 <strong></strong> <input type="submit" name="signup-btn" class="btn btn-success rounded-pill"><strong></td>
+                  <td><strong><input type="reset" name="signup-btn" class="btn btn-danger rounded-pill pr-4 "></strong></td>
+
+              </tr>
+
+
+
+
+
+
+
+
+
+            </table>
+
+
+
+
+        </form>
+
+
+
+</body>
+{% endblock %}
+</html>

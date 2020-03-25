@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalabel=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+   <title>X-HACKER</title>
+    {% load static %}
+    <link href="{% static 'js/bootstrap.min.js' %}">
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+
+    <style>
+
+        body{
+            width: 100vw;
+            height:100vh;
+
+            background-size: cover;
+            background-position: 0% 9%;
+
+
+        }
+        .bg{
+            background-image: url("{% static '5e53ffe0de222.png'%}");
+
+            height: 95vh;
+
+        }
+        *{
+            font-family:Berlin sans-serif;
+            margin: 0;
+            padding: 0;
+
+
+        }
+        .nav-link .navbar-brand{
+            color: white;
+
+        }
+        .nav-link{
+            font-size: 1.5vw;
+
+        }
+        .navbar-brand{
+            font-size: 3vw;
+        }
+        .content{
+            margin: 17vw;
+            margin-bottom: 35vw;
+        }
+        h1{
+            font-size: 5vw;
+        }
+        p{
+            font-size: 22px;
+            text-align: center;
+        }
+        .parallax{
+            height: 30vw;
+            background-image: url("{% static '739905.png' %}");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: white;
+            display: flex;
+            align-items: center;
+
+        }
+        input[type="text"]{
+            width: 25vw;
+        }
+        textarea{
+            width: 52vw;
+        }
+
+        .parallax2{
+            height: 40vw;
+           background:black;
+            background-position:50% ;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            color: white;
+            display: flex;
+            align-items: center;
+
+        }
+        .parallax2 h2{
+            color: black;
+            padding-bottom:5vh ;
+
+        }
+        .parallax2 p{
+            color: black;
+            font-size: 1.3vw;
+
+        }
+        .btn1{
+            float: left;
+            background-color:transparent;
+            color: white;
+        }
+        .btn2{
+            float: right;
+            background-color: transparent;
+            color: white;
+        }
+        .cls-3{
+            position: relative;
+        }
+        .cout{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin-left: 3vw;
+
+
+        }
+        .footer{
+            background-image: url("{% static 'Footer.png' %}");
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            position: relative;
+        }
+        .rights{
+            position: absolute;
+            bottom: 0;
+            color: white;
+
+
+
+
+        }
+        h3{
+            font-weight: bold;
+            font-style: italic;
+        }
+    </style>
+
+</head>
+
+
+
+<body>
+
+<div class="bg ">
+
+<nav class="nav navbar-expand-lg navbar-dark">
+    <a class="navbar-brand pl-5 " href="">X</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="'navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon">
+
+        </span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item px-3 active">
+                <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+
+            </li>
+            <li class="nav-item px-3">
+                <a class="nav-link" href="/software">Software</a>
+            </li>
+            <li class="nav-item px-3">
+                <a class="nav-link" href="#">Service</a>
+            </li>
+            {% if user.is_authenticated %}
+            <li class="nav-item px-3">
+                <a class="nav-link" href="/profile/{{ user.username }}">Your Profile</a>
+            </li>
+            {% endif %}
+            <li class="nav-item px-3">
+                <a class="nav-link" href="{% url 'allpost' %}">Forum</a>
+            </li>
+            <li class="nav-item px-3">
+                <a class="nav-link" href="{% url 'contactUs' %}">Contact Us</a>
+            </li>
+        {% if user.is_authenticated %}
+         <li class="nav-item px-3">
+                <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+            </li>
+        {% endif %}
+        </ul>
+    </div>
+</nav>
+
+
+<div class="row content">
+    <div class="col-2"></div>
+    <div class="col-10">
+        <img src="{% static 'x3.png' %}" class="img-fluid">
+
+    </div>
+    <div class="col-4">
+        {% if user.is_authenticated %}
+            <p class="text-white">Welcome,{{ user.username }}</p>
+        {% else %}
+        <a href="{% url 'signup' %}"> <img src="{% static '25563-6-get-instant-access-button-transparent.png' %}" class="img-fluid"></a>
+        {% endif %}
+    </div>
+</div>
+</div>
+
+<div class="container text-center mt-5">
+    <h1>Our Features</h1>
+    <p class="pt-2 font-weight-bold">We are working hard to provide you the best service.Keep supporting...!</p>
+
+</div>
+<div class="container text-center pt-4">
+    <div class="row">
+        <div class="col-4">
+            <img src="{% static 'if_Menu_green_1891031.png' %}" class="img-fluid">
+        </div>
+        <div class="col-4">
+            <img src="{% static 'if_Clock_1891022.png' %}" class="img-fluid">
+        </div>
+        <div class="col-4">
+            <img src="{% static 'if_Chat2_1891020.png' %}" class="img-fluid">
+        </div>
+    </div>
+</div>
+<div class="container text-center pt-4">
+    <div class="row py-5">
+        <div class="col-4">
+            <p>We provide training on the basis of the demands of the user and also provide certification to the related course...</p>
+        </div>
+        <div class="col-4">
+            <p>Since we provide cracking service. So we can provide the software on the fixed date and time..... </p>
+        </div>
+        <div class="col-4">
+            <p>
+               We provide online Chat Service where you can directly talk with our team or our team can easily communicate with thei clients..
+            </p>
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid">
+    <div class="parallax">
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-5">
+                <h1>We make &nbsp; You happy is</h1>
+            </div>
+            <div class="col-2"></div>
+            <div class="col-4">
+                <h1>Our Goal.....!</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row mt-5 mb-5">
+        <div class="col-4">
+            <h1>Contact Us</h1>
+           <h3>Any additional information or ask any question please fill the form..</h3>
+            <h3>Or</h3>
+            <h3>Email: Xhacker@gmail.com</h3>
+
+        </div>
+        <form class="col-8 mt-3" method="post" action="">
+            {% csrf_token %}
+            <input type="text" class="mr-4 py-2 px-3" placeholder="Name" name="name">
+            <input type="email" class="py-2 px-3 "
+            placeholder="Email" name="email">
+            <textarea rows="7" placeholder="Message" class="mt-3 py-3 px-3" name="message"></textarea>
+            <button type="submit" class="btn btn-success">Submit</button>
+
+
+        </form>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="parallax2 text-center ">
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-4">
+                <img src="{% static 'hacker_PNG3.png' %}" class="img-fluid">
+            </div>
+
+             <div class="col-1 "></div>
+            <div class="col-5 mt-5">
+                <h2 class="text-white">Join Hacker Community</h2>
+                <p class="text-white">Join the largest Hacker Community and Be the one of the powerful hacker.X-Hacker Community is one of the best Hacking community with various services...For more info fill the form given below and ask the ques.....Thank you!!!</p>
+                <div class="row">
+
+                    <div class="col-6">
+                        {% if user.is_authenticated %}
+                            <a href="/allpost"> <button type="button" class="btn1 btn btn-primary px-4">Go To Community</button></a>
+                            {% else %}
+
+                        <a href="{%  url 'signin' %}"> <button type="button" class="btn1 btn btn-primary px-4">Login Member</button></a>
+                        {% endif %}
+                    </div>
+                    <div class="col-6">
+                        {% if user.is_authenticated %}
+                         <a href="/profile/{{ user.username }}"> <button type="button" class="btn2 btn btn-primary px-3">Go To Profile</button></a>
+
+                        {% else %}
+                      <a href="{% url 'signup' %}"> <button type="button" class="btn2 btn btn-primary px-3">Join Us</button></a>
+
+                        {% endif %}
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row mt-5">
+        <div class="col-12 text-center">
+            <h1>Our Objective</h1>
+
+        </div>
+        <div class="col-4"></div>
+        <div class="col-5">
+            <p style=" width: 30vw;" class="font-weight-bold">
+               The main objective of X-HACKER is to provide premium quality service without any issue....!!!
+
+            </p>
+        </div>
+        <div class="col-3"></div>
+    </div>
+    <div class="container-fluid footer">
+        <div class="row text-center mt-5">
+            <div class="col-4 cls-3 text-center">
+                <img src="{% static 'Curcles.png' %}" class="img-fluid">
+                <img src="{% static '100moneyback-2.png' %}"class="img-fluid cout">
+                <h2 class="mt-4 font-weight-bold">Payment</h2>
+            </div>
+            <div class="col-4 cls-3">
+                <img src="{% static 'Curcles.png' %}" class="img-fluid">
+                <img src="{% static 'unnamed.png' %}"class="img-fluid cout" style="margin-left: 7vw;">
+                <h2 class="mt-4 font-weight-bold"> Cracking</h2>
+            </div>
+            <div class="col-4 cls-3">
+                <img src="{% static 'Curcles.png' %}" class="img-fluid">
+                <img src="{% static 'certified_PNG28.png' %}"class="img-fluid cout">
+                <h2 class="mt-4 font-weight-bold">CERTIFIED</h2>
+            </div>
+        </div>
+        <div class="rights">
+            <h2>2018 All Right Reserve @ X-Hacker</h2>
+
+            <div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    ScrollReveal().reveal('.container');
+    ScrollReveal().reveal('.container-fluid');
+    ScrollReveal().reveal('.row');
+    ScrollReveal().reveal('.cls-3');
+</script>
+
+</body>
+</html>

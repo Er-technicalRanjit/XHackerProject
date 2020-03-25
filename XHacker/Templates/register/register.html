@@ -1,0 +1,35 @@
+<head>
+    {% load static %}
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+<style>
+    body{
+        background-image: url("{% static '1034101039.jpg' %}");
+    }
+</style>
+</head>
+<body>
+
+{% load crispy_forms_tags %}
+<div class="container text-white">
+    <div class="row mt-5 mb-5">
+        <div class="col-4">
+            <h1>Contact Us</h1>
+            <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+
+            </p>
+
+        </div>
+        <form class="col-8 mt-3 form-group" method="post" action="" >
+            {% csrf_token %}
+            {{ form|crispy }}
+            <button type="submit" class="btn btn-success">Submit</button>
+
+        </form>
+    </div>
+</div>
+
+
+
+
+</body>

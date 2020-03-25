@@ -1,0 +1,15 @@
+{% for foo in ap %}
+
+    <a href="{% url 'show' foo.id %}" > {{foo.title }}</a>
+
+     {% for objs in obj %}
+         {% if objs.id == obla.id %}
+         {{ objs.comment }}<br>
+         {% endif %}
+         {% endfor %}
+
+
+
+{% endfor %}
+
+

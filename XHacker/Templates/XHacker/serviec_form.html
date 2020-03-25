@@ -1,0 +1,63 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+{% load static %}
+    <link href="{% static 'js/bootstrap.min.js' %}">
+
+<style>
+    body{
+        background-image: url("{% static '5e53ffe0de222.png' %}");
+
+    }
+    .cw{
+        color: white;
+    }
+    .require {
+    color: #666;
+}
+label small {
+    color: #999;
+    font-weight: normal;
+}
+
+</style>
+
+
+<div class="container bg">
+	<div class="row text-white cw">
+
+	    <div class="col-md-8 col-md-offset-2 text-white">
+
+    		<h1 class="text-white cw">Update post</h1>
+
+    		<form action="" method="POST" enctype="multipart/form-data" >
+                {% csrf_token %}
+
+    		    <div class="form-group">
+    		        <label for="title" class="cw" style="">Title <span class="require">*</span></label>
+    		        {{form.name}}
+    		    </div>
+
+    		    <div class="form-group">
+    		        <label for="description" class="cw">Description</label>
+    		        {{ form.description }}
+    		    </div>
+                {% if form.image %}
+                 <div class="form-group">
+    		        <label for="image" class="cw">image</label>
+    		        {{ form.image }}
+    		    </div>
+                {% endif %}
+
+    		    <div class="form-group">
+    		        <button type="submit" class="btn btn-primary">
+    		           Update
+    		        </button>
+    		    </div>
+
+    		</form>
+		</div>
+
+	</div>
+</div>

@@ -1,0 +1,431 @@
+{% load static %}
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"
+      xmlns="http://www.w3.org/1999/html">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>{{ post.name }}-XHacker</title>
+
+ <link href="{% static 'js/bootstrap.min.js' %}">    <!-- Bootstrap core CSS -->
+   <style>
+
+       body {
+    margin-top: 100px; /* 100px is double the height of the navbar - I made it a big larger for some more space - keep it at 50px at least if you want to use the fixed top nav */
+}
+
+footer {
+	margin: 50px 0;
+}
+
+
+
+.vid {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px; height: 0; overflow: hidden;
+}
+
+.vid iframe,
+.vid object,
+.vid embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.cuadro_intro_hover{
+        padding: 0px;
+		position: relative;
+		overflow: hidden;
+		height: 200px;
+	}
+	.cuadro_intro_hover:hover .caption{
+		opacity: 1;
+		transform: translateY(-150px);
+		-webkit-transform:translateY(-150px);
+		-moz-transform:translateY(-150px);
+		-ms-transform:translateY(-150px);
+		-o-transform:translateY(-150px);
+	}
+	.cuadro_intro_hover img{
+		z-index: 4;
+	}
+	.cuadro_intro_hover .caption{
+		position: absolute;
+		top:150px;
+		-webkit-transition:all 0.3s ease-in-out;
+		-moz-transition:all 0.3s ease-in-out;
+		-o-transition:all 0.3s ease-in-out;
+		-ms-transition:all 0.3s ease-in-out;
+		transition:all 0.3s ease-in-out;
+		width: 100%;
+	}
+	.cuadro_intro_hover .blur{
+		background-color: rgba(0,0,0,0.7);
+		height: 300px;
+		z-index: 5;
+		position: absolute;
+		width: 100%;
+	}
+	.cuadro_intro_hover .caption-text{
+		z-index: 10;
+		color: #fff;
+		position: absolute;
+		height: 300px;
+		text-align: center;
+		top:-20px;
+		width: 100%;
+	}
+
+       .img {
+           height:70vh;
+           width: 55vw;
+       }
+
+
+
+
+   </style>
+
+    <!-- Add custom CSS here -->
+    <link href="css/blog-post.css" rel="stylesheet">
+     <link href="css/youtube.css" rel="stylesheet">
+	 <link href="css/books.css" rel="stylesheet">
+
+<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="">Blog Post</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href=""><i class="fa fa-home"></i> Home</a>
+                    </li>
+                    <li class="active"><a href=""><i class="fa fa-book"></i> Posts</a>
+                    </li>
+                    <li><a href=""><i class="fa fa-envelope"></i> Contact</a>
+                    </li>
+					<li><a href="{% url 'AboutUs' %}"><i class="fa fa-user"></i> About</a>
+                    </li>
+
+					<form class="navbar-form navbar-right" action="{% url 'allpost' %}">
+      <input type="text" class="form-control col-lg-8" placeholder="Search...">
+    </form>
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-8">
+
+                <!-- the actual blog post: title/author/date/content -->
+                <h1><a href="">{{ post.name }}</a></h1>
+                <p class="lead"><i class="fa fa-user"></i> by <a href="/profile/{{ post.user.username }}">{{ post.user }}</a>
+                </p>
+                <hr>
+                <p><i class="fa fa-calendar"></i> {{ post.created_date }}</p>
+				<p><i class="fa fa-tags"></i> Tags: <a href=""><span class="badge badge-info">Windows</span></a> <a href=""><span class="badge badge-info">Web</span></a> <a href=""><span class="badge badge-info">Netflix</span></a> <a href=""><span class="badge badge-info">Hotstar</span></a></p>
+
+<hr>
+
+{% if post.image %}
+                     <img src="{{ post.image.url }}"  class="img" />
+{% endif %}
+
+<hr>
+
+                <p class="lead">{{ post.description }}</p>
+                <br/>
+
+                <hr>
+
+                <!-- the comment box -->
+                <div class="well">
+                    <h4><i class="fa fa-paper-plane-o"></i> Leave a Comment:</h4>
+                    <form role="form">
+                        <div class="form-group">
+                            <textarea class="form-control" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary"><i class="fa fa-reply"></i> Submit</button>
+                    </form>
+                </div>
+<script src="https://apis.google.com/js/plusone.js">
+</script>
+                <hr>
+
+                <!-- the comments -->
+                <h3><i class="fa fa-comment"></i> User One says:
+                    <small> 9:41 PM on August 24, 2014</small>
+                </h3>
+                <p>Excellent post! Thank You the great article, it was useful!</p>
+
+                <h3><i class="fa fa-comment"></i> User Two says:
+                    <small> 9:47 PM on August 24, 2014</small>
+                </h3>
+                <p>Excellent post! Thank You the great article, it was useful!</p>
+
+            </div>
+
+            <div class="col-lg-4">
+                <div class="well">
+
+                   <form method="post" action="{% url 'allpost' %}">
+                       {% csrf_token %}
+                       <h4><i class="fa fa-search"></i> Blog Search...</h4>
+                    <div class="input-group">
+                        <input type="text" class="form-control" >
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="submit">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </span>
+
+
+                </form>
+                    </div>
+
+                    <!-- /input-group -->
+                </div>
+
+                <!-- /well -->
+                <div class="well">
+                    <h4><i class="fa fa-tags"></i> Popular Tags:</h4>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <ul class="list-unstyled">
+                                <li><span class="badge badge-info">Windows 8</span>
+                                </li>
+                                 <li><span class="badge badge-info">C#</span>
+                                </li>
+                                 <li><span class="badge badge-info">Windows Forms</span>
+                                </li>
+                                 <li><span class="badge badge-info">WPF</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6">
+                            <ul class="list-unstyled">
+                                <li><span class="badge badge-info">Software</span>
+                                </li>
+                                 <li><span class="badge badge-info">Hotstar!</span>
+                                </li>
+                                 <li><span class="badge badge-info">Netflix</span>
+                                </li>
+                                 <li><span class="badge badge-info">Java</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+				<!-- /well -->
+				<div class="well">
+                    <h4><i class="fa fa-thumbs-o-up"></i> Follow me!</h4>
+					<ul>
+                    <p><a title="Facebook" href="http://facebook.com/xhacker"><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x"></i></span></a> <a title="Twitter" href="http://twitter.com/xhacker01"><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-2x"></i><i class="fa fa-twitter fa-stack-1x"></i></span></a> <a title="Google+" href=""><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-2x"></i><i class="fa fa-google-plus fa-stack-1x"></i></span></a> <a title="Linkedin" href="http://linkedin.com/xhacker"><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-2x"></i><i class="fa fa-linkedin fa-stack-1x"></i></span></a> <a title="GitHub" href=""><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-2x"></i><i class="fa fa-github fa-stack-1x"></i></span></a> <a title="Bitbucket" href=""><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-2x"></i><i class="fa fa-bitbucket fa-stack-1x"></i></span></a></p>
+					</ul>
+                </div>
+				<!-- /well -->
+                <!-- /well -->
+
+                <div class="well">
+                    <h4><i class="fa fa-fire"></i> Recent Posts :</h4>
+					<ul>
+                        {% for post in allpost|slice:'10' %}
+                    <li><a href="/forum/{{ post.slug }}">{{ post.name }}</a></li>
+
+                        {% endfor %}
+
+					</ul>
+                </div>
+                <!-- /well -->
+
+				<!-- /well -->
+                <div class="well">
+                    <h4><i class="fa fa-book"></i> Popular Posts:</h4>
+                    <div class="row">
+                        {% for pst in allpost|slice:'2' %}
+
+                            <div class="col-lg-12">
+    				<div class="cuadro_intro_hover " style="background-color:#cccccc;">
+
+						<p style="text-align:center; margin-top:20px;">
+                            {% if pst.image %}
+							<img src="{{ pst.image.url }}" class="img-responsive" alt="">
+                            {% else %}
+                            <img src="https://thednetworks.com/wp-content/uploads/2012/01/picture_not_available_400-300.png" class="img-responsive" alt="">
+                            {% endif %}
+						</p>
+						<div class="caption">
+							<div class="blur"></div>
+							<div class="caption-text">
+								<h3 style="border-top:2px solid white; border-bottom:2px solid white; padding:10px;">{{ pst.name }}</h3>
+								<p>{{ pst.description|truncatechars:'100' }}</p>
+								<a class=" btn btn-default" href="/forum/{{ pst.slug }}"><i class="fa fa-plus"></i> INFO</span></a>
+
+							</div>
+						</div>
+					</div>
+
+	    </div>
+                        {% endfor %}
+
+
+                        </div>
+
+
+                </div>
+                <!-- /well -->
+
+
+            </div>
+        </div>
+
+
+        <hr>
+
+    <footer>
+            <div class="row">
+                <div class="col-lg-12">
+    			<div class="col-lg-3 col-md-6">
+                <div class="container">
+
+
+    	<div class="col-lg-3">
+    				<div class="cuadro_intro_hover " style="background-color:#cccccc;">
+						<p style="text-align:center; margin-top:20px;">
+							<img src="http://placehold.it/500x330" class="img-responsive" alt="">
+						</p>
+						<div class="caption">
+							<div class="blur"></div>
+							<div class="caption-text">
+								<h3 style="border-top:2px solid white; border-bottom:2px solid white; padding:10px;">THIS IS H3</h3>
+								<p>Loren ipsum dolor si amet ipsum dolor si amet ipsum dolor...</p>
+								<a class=" btn btn-default" href="#"><span class="glyphicon glyphicon-plus"> INFO</span></a>
+							</div>
+						</div>
+					</div>
+
+	    </div>
+       <div class="col-lg-3">
+    				<div class="cuadro_intro_hover " style="background-color:#cccccc;">
+						<p style="text-align:center; margin-top:20px;">
+							<img src="http://placehold.it/500x330" class="img-responsive" alt="">
+						</p>
+						<div class="caption">
+							<div class="blur"></div>
+							<div class="caption-text">
+								<h3 style="border-top:2px solid white; border-bottom:2px solid white; padding:10px;">THIS IS H3</h3>
+								<p>Loren ipsum dolor si amet ipsum dolor si amet ipsum dolor...</p>
+								<a class=" btn btn-default" href="#"><span class="glyphicon glyphicon-plus"> INFO</span></a>
+							</div>
+						</div>
+					</div>
+
+	    </div>
+
+
+            <div class="col-lg-3 col-md-6">
+			<h3>Categories:</h3>
+                <ul>
+				<li><a href=""><i class="fa fa-file"></i> News</a></li>
+				<li><a href=""><i class="fa fa-android"></i> Android</a></li>
+				<li><a href=""><i class="fa fa-code"></i> C#</a></li>
+				<li><a href=""><i class="fa fa-code"></i> Java</a></li>
+				<li><a href=""><i class="fa fa-book"></i> Books</a></li>
+				<li><a href=""><i class="fa fa-globe"></i> Web</a></li>
+				<li><a href=""><i class="fa fa-windows"></i> Windows</a></li>
+				</ul>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <h3>Contact:</h3>
+				<p>Have a question or feedback? Contact me!</p>
+				<p><a href="/contactUs" title="Contact me!"><i class="fa fa-envelope"></i> Contact</a></p>
+            <h3>Follow:</h3>
+
+
+<a href="http://twitter.com/xhacker01" id="gh" target="_blank" title="Twitter"><span class="fa-stack fa-lg">
+  <i class="fa fa-square-o fa-stack-2x"></i>
+  <i class="fa fa-twitter fa-stack-1x"></i>
+</span>
+Twitter</a>
+<a href="http://github.com/xhacker"  target="_blank" title="GitHub"><span class="fa-stack fa-lg">
+  <i class="fa fa-square-o fa-stack-2x"></i>
+  <i class="fa fa-github fa-stack-1x"></i>
+</span>
+GitHub</a>
+
+
+
+
+
+
+			</div>
+			<br/>
+
+
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+<div class="g-plusone" data-annotation="inline" data-width="300" data-href=""></div>
+
+<!-- Helyezd el ezt a címkét az utolsó +1 gomb címke mögé. -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/platform.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+			<br/>
+
+				<hr>
+                    <p>Copyright © H-Hacker | <a href="{% url 'privacy_policy' %}">Privacy Policy</a> | <a href="{% url 'TermsAndCondition' %}">Terms of Use</a></p>
+
+
+
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- JavaScript -->
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+</body>
+
+</html>

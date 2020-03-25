@@ -1,0 +1,10 @@
+{% load static %}
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<link href="{% static 'css/bootstrap.css' %}">
+
+<form method="post" action="{% url 'delete_user_post' post.slug %}">
+{% csrf_token %}
+    <label class="pl-5"><strong>Are you sure want to delete {{ post.title }}</strong></label>
+<a href="{% url 'delete_user_post' post.slug %}"><button type="submit" class="btn btn-danger">delete</button></a>
+    </form>

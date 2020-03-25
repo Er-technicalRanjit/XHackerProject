@@ -1,0 +1,1187 @@
+{% load static %}
+
+<!------ Include the above in your HEAD tag ---------->
+
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="sumit kumar">
+	<title>blog</title>
+	<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+	<link href="css/font-awesome.css" rel="stylesheet" type="text/css">
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<script src="https://use.fontawesome.com/07b0ce5d10.js"></script>
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+        <style>
+
+body{background-color:#ECF0F1;}
+
+.navbar-inverse {
+    background-color: #34495E;
+    border-color: #34495E;
+}
+
+.navbar {
+    position: relative;
+    min-height: 50px;
+    margin-bottom: 20px;
+    border: 0px solid transparent;
+    border-radius:0px;
+
+}
+.navbar-brand {
+
+    float: left;
+    height:auto;
+    padding: 10px 10px;
+    font-size: 18px;
+    line-height: 20px;
+}
+.navbar-brand>img{ width:80%;}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #F39C12;
+}
+.navbar-inverse .navbar-nav > li > a:hover {
+   background-color: #009688;
+}
+
+.btn-default {
+    color: #333;
+    background-color: #009688;
+    border-color: #009688;
+    border-radius:0px;
+    color:#fff;
+}
+
+#blog-section{margin-top:40px;margin-bottom:80px;}
+.content-title{padding:5px;background-color:#fff;}
+.content-title h3 a{color:#34495E;text-decoration:none; transition: 0.5s;}
+.content-title h3 a:hover{color:#F39C12; }
+.content-footer{background-color:#16A085;padding:10px;position: relative;}
+.content-footer span a {
+    color: #fff;
+    display: inline-block;
+    padding: 6px 5px;
+    text-decoration: none;
+    transition: 0.5s;
+}
+.content-footer span a:hover{
+    color:#F39C12;
+}
+aside{
+    margin-top: 30px;
+    -webkit-box-shadow: 1px 4px 16px 3px rgba(199,197,199,1);
+-moz-box-shadow: 1px 4px 16px 3px rgba(199,197,199,1);
+box-shadow: 1px 4px 16px 3px rgba(199,197,199,1);}
+aside .content-footer>img {
+    width: 33px;
+    height: 40px;
+    border-radius: 100%;
+    display: block;
+    margin-right: 10px;
+    border: 2px solid #fff;
+}
+
+.user-ditels {
+    width: 300px;
+    top: -100px;
+    height: 100px;
+    padding-bottom: 99px;
+    position: absolute;
+    border: solid 2px #fff;
+    background-color: wheat;
+    right: 25px;
+    display: none;
+    z-index: 1;
+}
+
+@media (max-width:768px){
+    .user-ditels {
+    right: 5px;
+}
+
+}
+.user-small-img{cursor: pointer;}
+
+.content-footer:hover .user-ditels  {
+    display: block;
+}
+
+
+.content-footer .user-ditels .user-img{width: 100px;height:100px;float: left;}
+.user-full-ditels h3 {
+    color: black;
+    display: block;
+    margin: 0px;
+    padding-top: 10px;
+    padding-right: 28px;
+    text-align: right;
+}
+.user-full-ditels p{
+    color: black;
+    display: block;
+    margin: 0px;
+     padding-right: 20px;
+    padding-top: 5px;
+   text-align: right;}
+.social-icon {
+    background-color: #fff;
+    margin-top: 10px;
+    padding-right: 20px;
+    text-align: right;
+}
+.social-icon>a{font-size:20px;text-decoration:none;padding: 5px;}
+.social-icon a:nth-of-type(1){color:#4E71A8;}
+.social-icon a:nth-of-type(2){color:#3FA1DA;}
+.social-icon a:nth-of-type(3){color:#E3411F;}
+.social-icon a:nth-of-type(4){color:#CA3737;}
+.social-icon a:nth-of-type(5){color:#3A3A3A;}
+
+
+/*recent-post-col////////////////////*/
+.widget-sidebar {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.title-widget-sidebar {
+    font-size: 14pt;
+    border-bottom: 2px solid #e5ebef;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    margin-top: 0px;
+}
+
+.title-widget-sidebar:after {
+    border-bottom: 2px solid #f1c40f;
+    width: 150px;
+    display: block;
+    position: absolute;
+    content: '';
+    padding-bottom: 10px;
+}
+
+.recent-post{width: 100%;height: 80px;list-style-type: none;}
+.post-img img {
+    width: 100px;
+    height: 70px;
+    float: left;
+    margin-right: 15px;
+    border: 5px solid #16A085;
+    transition: 0.5s;
+}
+
+.recent-post a {text-decoration: none;color:#34495E;transition: 0.5s;}
+.post-img, .recent-post a:hover{color:#F39C12;}
+.post-img img:hover{border: 5px solid #F39C12;}
+
+/*===============ARCHIVES////////////////////////////*/
+/*footer*/
+ body { color: #ccc }
+.footer-widget p {
+    margin-bottom: 27px;
+}
+p {
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+    line-height: 28px;
+}
+
+   .animate-border {
+  position: relative;
+  display: block;
+  width: 115px;
+  height: 3px;
+  background: #007bff; }
+
+.animate-border:after {
+  position: absolute;
+  content: "";
+  width: 35px;
+  height: 3px;
+  left: 0;
+  bottom: 0;
+  border-left: 10px solid #fff;
+  border-right: 10px solid #fff;
+  -webkit-animation: animborder 2s linear infinite;
+  animation: animborder 2s linear infinite; }
+
+@-webkit-keyframes animborder {
+  0% {
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px); }
+  100% {
+    -webkit-transform: translateX(113px);
+    transform: translateX(113px); } }
+
+@keyframes animborder {
+  0% {
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px); }
+  100% {
+    -webkit-transform: translateX(113px);
+    transform: translateX(113px); } }
+
+.animate-border.border-white:after {
+  border-color: #fff; }
+
+.animate-border.border-yellow:after {
+  border-color: #F5B02E; }
+
+.animate-border.border-orange:after {
+  border-right-color: #007bff;
+  border-left-color: #007bff; }
+
+.animate-border.border-ash:after {
+  border-right-color: #EEF0EF;
+  border-left-color: #EEF0EF; }
+
+.animate-border.border-offwhite:after {
+  border-right-color: #F7F9F8;
+  border-left-color: #F7F9F8; }
+
+/* Animated heading border */
+@keyframes primary-short {
+  0% {
+    width: 15%; }
+  50% {
+    width: 90%; }
+  100% {
+    width: 10%; } }
+
+@keyframes primary-long {
+  0% {
+    width: 80%; }
+  50% {
+    width: 0%; }
+  100% {
+    width: 80%; } }
+
+.dk-footer {
+  padding: 75px 0 0;
+  background-color: #151414;
+  position: relative;
+  z-index: 2; }
+  .dk-footer .contact-us {
+    margin-top: 0;
+    margin-bottom: 30px;
+    padding-left: 80px; }
+    .dk-footer .contact-us .contact-info {
+      margin-left: 50px; }
+    .dk-footer .contact-us.contact-us-last {
+      margin-left: -80px; }
+  .dk-footer .contact-icon i {
+    font-size: 24px;
+    top: -15px;
+    position: relative;
+    color:#007bff; }
+
+.dk-footer-box-info {
+  position: absolute;
+  top: -122px;
+  background: #202020;
+  padding: 40px;
+  z-index: 2; }
+  .dk-footer-box-info .footer-social-link h3 {
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 25px; }
+  .dk-footer-box-info .footer-social-link ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0; }
+  .dk-footer-box-info .footer-social-link li {
+    display: inline-block; }
+  .dk-footer-box-info .footer-social-link a i {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    background: #000;
+    margin-right: 5px;
+    color: #fff; }
+    .dk-footer-box-info .footer-social-link a i.fa-facebook {
+      background-color: #3B5998; }
+    .dk-footer-box-info .footer-social-link a i.fa-twitter {
+      background-color: #55ACEE; }
+    .dk-footer-box-info .footer-social-link a i.fa-google-plus {
+      background-color: #DD4B39; }
+    .dk-footer-box-info .footer-social-link a i.fa-linkedin {
+      background-color: #0976B4; }
+    .dk-footer-box-info .footer-social-link a i.fa-instagram {
+      background-color: #B7242A; }
+
+.footer-awarad {
+  margin-top: 285px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 100%;
+  -moz-box-flex: 0;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+  .footer-awarad p {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+    margin-left: 20px;
+    padding-top: 15px; }
+
+.footer-info-text {
+  margin: 26px 0 32px; }
+
+.footer-left-widget {
+  padding-left: 80px; }
+
+.footer-widget .section-heading {
+  margin-bottom: 35px; }
+
+.footer-widget h3 {
+  font-size: 24px;
+  color: #fff;
+  position: relative;
+  margin-bottom: 15px;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content; }
+
+.footer-widget ul {
+  width: 50%;
+  float: left;
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+.footer-widget li {
+  margin-bottom: 18px; }
+
+.footer-widget p {
+  margin-bottom: 27px; }
+
+.footer-widget a {
+  color: #878787;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s; }
+  .footer-widget a:hover {
+    color: #007bff; }
+
+.footer-widget:after {
+  content: "";
+  display: block;
+  clear: both; }
+
+.dk-footer-form {
+  position: relative; }
+  .dk-footer-form input[type=email] {
+    padding: 14px 28px;
+    border-radius: 50px;
+    background: #2E2E2E;
+    border: 1px solid #2E2E2E; }
+  .dk-footer-form input::-webkit-input-placeholder, .dk-footer-form input::-moz-placeholder, .dk-footer-form input:-ms-input-placeholder, .dk-footer-form input::-ms-input-placeholder, .dk-footer-form input::-webkit-input-placeholder {
+    color: #878787;
+    font-size: 14px; }
+  .dk-footer-form input::-webkit-input-placeholder, .dk-footer-form input::-moz-placeholder, .dk-footer-form input:-ms-input-placeholder, .dk-footer-form input::-ms-input-placeholder, .dk-footer-form input::placeholder {
+    color: #878787;
+    font-size: 14px; }
+  .dk-footer-form button[type=submit] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 12px 24px 12px 17px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border: 1px solid #007bff;
+    background: #007bff;
+    color: #fff; }
+  .dk-footer-form button:hover {
+    cursor: pointer; }
+
+/* ==========================
+
+    Contact
+
+=============================*/
+.contact-us {
+  position: relative;
+  z-index: 2;
+  margin-top: 65px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.contact-icon {
+  position: absolute; }
+  .contact-icon i {
+    font-size: 36px;
+    top: -5px;
+    position: relative;
+    color: #007bff; }
+
+.contact-info {
+  margin-left: 75px;
+  color: #fff; }
+  .contact-info h3 {
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 0; }
+
+.copyright {
+  padding: 28px 0;
+  margin-top: 55px;
+  background-color: #202020; }
+  .copyright span,
+  .copyright a {
+    color: #878787;
+    -webkit-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear; }
+  .copyright a:hover {
+    color:#007bff; }
+
+.copyright-menu ul {
+  text-align: right;
+  margin: 0; }
+
+.copyright-menu li {
+  display: inline-block;
+  padding-left: 20px; }
+
+.back-to-top {
+  position: relative;
+  z-index: 2; }
+  .back-to-top .btn-dark {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    padding: 0;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #2e2e2e;
+    border-color: #2e2e2e;
+    display: none;
+    z-index: 999;
+    -webkit-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear; }
+    .back-to-top .btn-dark:hover {
+      cursor: pointer;
+      background: #FA6742;
+      border-color: #FA6742; }
+
+button.accordion {
+    background-color: #16A085;
+    color: #fff;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+button.accordion.active, button.accordion:hover {
+    background-color: #F39C12;color: #fff;
+}
+
+button.accordion:after {
+    content: '\002B';
+    color: #fff;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+button.accordion.active:after {
+    content: "\2212";
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+
+/*categories//////////////////////*/
+
+.categories-btn{
+    background-color: #F39C12;
+    margin-top:30px;
+    color: #fff;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+
+}
+.categories-btn:after {
+    content: '\25BA';
+    color: #fff;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+.categories-btn:hover {
+    background-color: #16A085;color: #fff;
+}
+
+.form-control{border-radius: 0px;}
+
+.btn-warning {
+    border-radius: 0px;
+    background-color: #F39C12;
+    margin-top: 15px;
+}
+.input-group-addon{border-radius: 0px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Now the styles*/
+
+/*Time to apply widths for accordian to work
+Width of image = 640px
+total images = 5
+so width of hovered image = 640px
+width of un-hovered image = 40px - you can set this to anything
+so total container width = 640 + 40*4 = 800px;
+default width = 800/5 = 160px;
+*/
+
+.accordian {
+	width: 905px; height: 420px;
+	overflow: hidden;
+
+
+	/*Time for some styling*/
+	margin: 100px auto;
+	box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
+	-webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
+	-moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
+}
+
+/*A small hack to prevent flickering on some browsers*/
+.accordian ul {
+	width: 1200px;
+	/*This will give ample space to the last item to move
+	instead of falling down/flickering during hovers.*/
+}
+
+.accordian li {
+	position: relative;
+	display: block;
+	width: 170px;
+	float: left;
+    margin-top: 5vh;
+
+
+	border-left: 1px solid #888;
+
+	box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
+
+	/*Transitions to give animation effect*/
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	/*If you hover on the images now you should be able to
+	see the basic accordian*/
+}
+
+/*Reduce with of un-hovered elements*/
+.accordian ul:hover li {width: 40px;}
+/*Lets apply hover effects now*/
+/*The LI hover style should override the UL hover style*/
+.accordian ul li:hover {width: 640px;}
+
+
+.accordian li img {
+	display: block;
+    margin-right: 3vw;
+}
+
+/*Image title styles*/
+.image_title {
+	background: rgba(0, 0, 0, 0.5);
+	position: absolute;
+	left: 0; bottom: 0;
+width: 640px;
+
+}
+.image_title a {
+	display: block;
+	color: #fff;
+	text-decoration: none;
+	padding: 20px;
+	font-size: 16px;
+}
+
+
+
+            .cs{
+               background: #696868;
+                border: 5px solid #696868;
+            }
+
+
+
+
+</style>
+
+
+    </head>
+
+<body>
+
+
+<nav class="navbar navbar-inverse">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><img src="https://lh3.googleusercontent.com/-N4NB2F966TU/WM7V1KYusRI/AAAAAAAADtA/fPvGVNzOkCo7ZMqLI6pPITE9ZF7NONmawCJoC/w185-h40-p-rw/logo.png"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="/">Home</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="{% url 'softwareMainPage' %}">All Software <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="">Computer Software</a></li>
+            <li><a href="#">Mobile Software</a></li>
+            <li><a href="#">Hotstar Premium</a></li>
+          </ul>
+        </li>
+        <li><a href="/mobileSoftware">Mobile Software</a></li>
+        <li><a href="/computerSoftware">Computer Software</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+          <form class="navbar-form navbar-left">
+  <div class="input-group">
+    <input type="text" class="form-control" placeholder="Search">
+    <div class="input-group-btn">
+      <button class="btn btn-default" type="submit">
+        <i class="glyphicon glyphicon-search"></i>
+      </button>
+    </div>
+  </div>
+</form>
+          {% if user.is_anonymous %}
+        <li><a href="{% url 'signup' %}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="{% url 'signin' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          {% endif %}
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<!------ Include the above in your HEAD tag ---------->
+<!-- We will make a simple accordian with hover effects
+The markup will have a list with images and the titles-->
+
+<div class="cs">
+    <h1 style="text-align: center; margin-top: 5vh; color: white; font-style: italic; font-family:'Arial Black';">Software World</h1>
+
+<div class="accordian">
+    <ul>
+		<li>
+			<div class="image_title">
+				<a href="https://www.youtube.com/channel/UCXTfDJ60DBmA932Du6B1ydg">Computer Software</a>
+			</div>
+			<a href="https://www.youtube.com/channel/UCXTfDJ60DBmA932Du6B1ydg">
+				<img src="https://niranjanpatel.com.np/wp-content/uploads/2019/08/cool-ways-to-launch-programs-search-folders-on-windows-670x335.jpg" height="310vh"/>
+			</a>
+		</li>
+		<li>
+			<div class="image_title">
+				<a href="https://www.youtube.com/channel/UCXTfDJ60DBmA932Du6B1ydg">Mobile Applications</a>
+			</div>
+			<a href="https://www.youtube.com/channel/UCXTfDJ60DBmA932Du6B1ydg">
+				<img src="https://windsorwinair.com/wp-content/uploads/2019/10/mobile-apps-for-small-businesses-313566272.jpg" height="310" width="600vw"/>
+			</a>
+		</li>
+		<li>
+			<div class="image_title">
+				<a href="https://www.youtube.com/channel/UCXTfDJ60DBmA932Du6B1ydg">Hacking App</a>
+			</div>
+			<a href="https://www.youtube.com/channel/UCXTfDJ60DBmA932Du6B1ydg">
+				<img src="https://techviral.net/wp-content/uploads/2019/10/best-hacking-apps.png" height="310vh"/>
+			</a>
+		</li>
+		<li>
+			<div class="image_title">
+				<a href="#">Netflix</a>
+			</div>
+			<a href="https://www.youtube.com/channel/UCXTfDJ60DBmA932Du6B1ydg">
+				<img src="https://www.androidblog.ch/wp-content/uploads/2019/01/netflix_header_new.jpg" height="310vh"/>
+			</a>
+		</li>
+		<li>
+			<div class="image_title">
+				<a href="#">Hotstar</a>
+			</div>
+			<a href="https://www.youtube.com/channel/UCXTfDJ60DBmA932Du6B1ydg">
+				<img src="https://skytechblog.com/wp-content/uploads/2019/05/60657213_487872278622235_9096652411220525056_n-min.jpg" height="310vh" width="600vw"/>
+			</a>
+		</li>
+	</ul>
+</div>
+
+
+</div>
+
+
+
+    <section id="blog-section" >
+     <div class="container">
+       <div class="row">
+         <div class="col-lg-8">
+           <div class="row">
+
+               {% for post in obj %}
+              <div class="col-lg-6 col-md-6">
+             <aside>
+                <img src="{{ post.image1.url }}" class="img-responsive" height="1000vh">
+                <div class="content-title">
+				<div class="text-center">
+				<h3><a href="/software/{{ post.id }}/{{ post.slug}}">{{ post.software_name }}</a></h3>
+				</div>
+				</div>
+				<div class="content-footer">
+				<img class="user-small-img" src="{% static 'tr.png' %}">
+				<span style="font-size: 16px;color: #fff;">X-Hacker</span>
+				<span class="pull-right">
+				<a href="#" data-toggle="tooltip" data-placement="left" title="Comments"><i class="fa fa-comments" ></i> {{ review.count }}</a>
+				<a href="#" data-toggle="tooltip" data-placement="right" title="Loved"><i class="fa fa-heart"></i> 20</a>
+				</span>
+                    <div class="user-ditels">
+                    <div class="user-img"><img src="{% static 'tr.png' %}" class="img-responsive" ></div>
+                        <span class="user-full-ditels">
+                        <h3>Technical Ranjit</h3>
+                        <p>The X-Hacker Team,</p>
+                        </span>
+                        <div class="social-icon">
+						<a href="#"><i class="fa fa-facebook" data-toggle="tooltip" data-placement="bottom" title="Facebook"></i></a>
+						<a href="#"><i class="fa fa-twitter" data-toggle="tooltip" data-placement="bottom" title="Twitter"></i></a>
+						<a href="#"><i class="fa fa-google-plus" data-toggle="tooltip" data-placement="bottom" title="Google Plus"></i></a>
+						<a href="#"><i class="fa fa-youtube" data-toggle="tooltip" data-placement="bottom" title="Youtube"></i></a>
+						<a href="#"><i class="fa fa-github" data-toggle="tooltip" data-placement="bottom" title="Github"></i></a>
+					</div>
+                    </div>
+				</div>
+             </aside>
+            </div>
+{% endfor %}
+
+           </div>
+          </div>
+
+<!--           // RECENT POST===========-->
+
+         <div class="col-lg-4">
+               <div class="widget-sidebar">
+                 <h2 class="title-widget-sidebar">// POPULAR POST</h2>
+                   <div class="content-widget-sidebar">
+                    <ul>
+                        {% for pst in obj %}
+                     <li class="recent-post">
+                        <div class="post-img">
+                         <img src="{{ pst.image1.url }}" class="img-responsive">
+                         </div>
+                         <a href="#"><h5>{{ pst.software_name }}</h5></a>
+                         <p><small><i class="fa fa-calendar" data-original-title="" title=""></i> {{ pst.created_date }}</small></p>
+                        </li>
+                        <hr>
+{% endfor %}
+
+
+                    </ul>
+                   </div>
+                 </div>
+
+             <div class="widget-sidebar">
+              <h2 class="title-widget-sidebar">Software Information:</h2>
+                <div class="last-post">
+                  <button class="accordion">Computer Software</button>
+                   <div class="panel">
+                     <li class="recent-post">
+                      <div class="post-img">
+                       <img src="https://niranjanpatel.com.np/wp-content/uploads/2019/08/cool-ways-to-launch-programs-search-folders-on-windows-670x335.jpg" class="img-responsive">
+                        </div>
+                       <a href="#"><h5>Computer Software </h5></a>
+                      <p><small><i class="fa fa-calendar" data-original-title="" title=""></i> 30 Juni 2020</small></p>
+                    </li>
+                       <p>We are providing the crack of all the computer software.You can check the crack of all the software by clicking the above link..</p>
+                  <p>Also we are providing the cracks on the user demand.Send us a <a href="/ContactUs"> mail </a>for your crack...
+                  </p>
+                 </div>
+                </div>
+                 <hr>
+                 <div class="last-post">
+                  <button class="accordion">Mobile Application</button>
+                   <div class="panel">
+                     <li class="recent-post">
+                      <div class="post-img">
+                       <img src="https://windsorwinair.com/wp-content/uploads/2019/10/mobile-apps-for-small-businesses-313566272.jpg" class="img-responsive">
+                        </div>
+                       <a href="#"><h5>Mobile Applications</h5></a>
+                      <p><small><i class="fa fa-calendar" data-original-title="" title=""></i> 30 Juni 2020</small></p>
+                    </li>
+                   <p>We are providing the crack of all the Android Applications.You can check the crack of all the software by clicking the above link..</p>
+                  <p>Also we are providing the cracks on the user demand.Send us a <a href="/ContactUs"> mail </a>for your crack...
+                  </p>
+                 </div>
+                </div>
+                 <hr>
+                 <div class="last-post">
+                  <button class="accordion">Cracking and Patching</button>
+                   <div class="panel">
+                     <li class="recent-post">
+                      <div class="post-img">
+                       <img src="https://techviral.net/wp-content/uploads/2019/10/best-hacking-apps.png" class="img-responsive">
+                        </div>
+                       <a href="#"><h5>Cracking and Patching Service</h5></a>
+                      <p><small><i class="fa fa-calendar" data-original-title="" title=""></i> 30 Juni 2020</small></p>
+                    </li>
+                   <p>We are providing the crack of all the software.You can check the crack of all the software by clicking the above link..</p>
+                  <p>Also we are providing the cracks on the user demand.Send us a <a href="/ContactUs"> mail </a>for your crack...
+                  </p>
+                 </div>
+                </div>
+                 <hr>
+                 <div class="last-post">
+                  <button class="accordion">Netflix and Hotstar Premium</button>
+                   <div class="panel">
+                     <li class="recent-post">
+                      <div class="post-img">
+                       <img src="https://www.androidblog.ch/wp-content/uploads/2019/01/netflix_header_new.jpg" class="img-responsive">
+                        </div>
+                       <a href="#"><h5>Get Netflix and Hotstar Premium</h5></a>
+                      <p><small><i class="fa fa-calendar" data-original-title="" title=""></i> 30 Juni 2020</small></p>
+                    </li>
+                   <p>We are providing the Premium Netflix and Hotstar Account.You can check details information about such crack..</p>
+                  <p>Also we are providing the cracks on the user demand.Send us a <a href="/ContactUs"> mail </a>for your crack...
+                  </p>
+                 </div>
+                </div>
+             </div>
+
+        <!--=====================
+               CATEGORIES
+          ======================-->
+             <div class="widget-sidebar">
+              <h2 class="title-widget-sidebar">// CATEGORIES</h2>
+                 <button class="categories-btn">Hacking and Cracking</button>
+                 <button class="categories-btn">Blog</button>
+                 <button class="categories-btn">Computer Software</button>
+                 <button class="categories-btn">Mobile Applications</button>
+             </div>
+
+              <!--=====================
+                    NEWSLATTER
+             ======================-->
+<div class="widget-sidebar">
+ <h2 class="title-widget-sidebar">// NEWSLATTER</h2>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor ut .</p>
+<div class="input-group">
+      <span class="input-group-addon"><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
+      <input id="email" type="text" class="form-control" name="email" placeholder="Email">
+    </div>
+    <button type="button" class="btn btn-warning">Warning</button>
+             </div>
+
+
+             </div>
+           </div>
+         </div>
+
+    </section>
+
+
+
+
+	 <script src="js/jquery-3.1.1.js"></script>
+	 <script src="js/bootstrap.js"></script>
+	 <script>
+         $(document).ready(function(){
+         $('[data-toggle="tooltip"]').tooltip();
+         });
+
+
+
+
+
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].onclick = function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight){
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    }
+  }
+}
+</script>
+
+
+
+
+
+<footer id="dk-footer" class="dk-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-lg-4">
+                    <div class="dk-footer-box-info">
+                        <a href="/" class="footer-logo">
+                            <img src="{% static 'x3.png' %}" alt="footer_logo" class="img-fluid" style="width: 15vw;">
+                        </a>
+                        <p class="footer-info-text">
+                          XHacker is a Certified Website Providing you a quality service.Join us for more service...
+                        </p>
+                        <div class="footer-social-link">
+                            <h3>Follow us</h3>
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-twitter"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-google-plus"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-linkedin"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-instagram"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- End Social link -->
+                    </div>
+                    <!-- End Footer info -->
+                    <div class="footer-awarad">
+                        <img src="images/icon/best.png" alt="">
+                        <p>The X-Hacker Team,</p>
+                    </div>
+                </div>
+                <!-- End Col -->
+                <div class="col-md-12 col-lg-8">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="contact-us">
+                                <div class="contact-icon">
+                                    <i class="fa fa-map-o" aria-hidden="true"></i>
+                                </div>
+                                <!-- End contact Icon -->
+                                <div class="contact-info">
+                                    <h3>Pokhara,Nepal</h3>
+                                    <p>Lekhnath-27,Talchowk</p>
+                                </div>
+                                <!-- End Contact Info -->
+                            </div>
+                            <!-- End Contact Us -->
+                        </div>
+                        <!-- End Col -->
+                        <div class="col-md-6">
+                            <div class="contact-us contact-us-last">
+                                <div class="contact-icon">
+                                    <i class="fa fa-volume-control-phone" aria-hidden="true"></i>
+                                </div>
+                                <!-- End contact Icon -->
+                                <div class="contact-info">
+                                    <h3>+9779826193345</h3>
+                                    <p>Give us a call</p>
+                                </div>
+                                <!-- End Contact Info -->
+                            </div>
+                            <!-- End Contact Us -->
+                        </div>
+                        <!-- End Col -->
+                    </div>
+                    <!-- End Contact Row -->
+                    <div class="row">
+                        <div class="col-md-12 col-lg-6">
+                            <div class="footer-widget footer-left-widget">
+                                <div class="section-heading">
+                                    <h3>Useful Links</h3>
+                                    <span class="animate-border border-black"></span>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="/aboutUs">About us</a>
+                                    </li>
+                                    <li>
+                                        <a href="/">Home</a>
+                                    </li>
+                                    <li>
+                                        <a href="/allpost">Forum</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://paypal.me/technicalranjit">Donate Us</a>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>
+                                        <a href="/contactUs">Contact us</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.ranjitdas.com.np">Blog</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">FAQ</a>
+                                    </li>
+                                    <li>
+                                        <a href="/contactUs">Help and Feedback</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- End Footer Widget -->
+                        </div>
+                        <!-- End col -->
+                        <div class="col-md-12 col-lg-6">
+                            <div class="footer-widget">
+                                <div class="section-heading">
+                                    <h3>Subscribe</h3>
+                                    <span class="animate-border border-black"></span>
+                                </div>
+                                <p><!-- Don’t miss to subscribe to our new feeds, kindly fill the form below. -->
+                               Don't miss any of the notification. Subscribe and stay Updated..</p>
+                                <form action="#">
+                                    <div class="form-row">
+                                        <div class="col dk-footer-form">
+                                            <input type="email" class="form-control " style="height: 7vh;" placeholder="Email Address">
+                                            <button type="submit"  >
+                                                <i class="fa fa-send"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                                <!-- End form -->
+                            </div>
+                            <!-- End footer widget -->
+                        </div>
+                        <!-- End Col -->
+                    </div>
+                    <!-- End Row -->
+                </div>
+                <!-- End Col -->
+            </div>
+            <!-- End Widget Row -->
+        </div>
+        <!-- End Contact Container -->
+
+
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <span>Copyright © 2019, All Right Reserved X-Hacker</span>
+                    </div>
+                    <!-- End Col -->
+                    <div class="col-md-6">
+                        <div class="copyright-menu">
+                            <ul>
+                                <li>
+                                    <a href="/">Home</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'TermsAndCondition' %}">Terms</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'privacy_policy' %}">Privacy Policy</a>
+                                </li>
+                                <li>
+                                    <a href="/ContactUs">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- End col -->
+                </div>
+                <!-- End Row -->
+            </div>
+            <!-- End Copyright Container -->
+        </div>
+        <!-- End Copyright -->
+        <!-- Back to top -->
+        <div id="back-to-top" class="back-to-top">
+            <button class="btn btn-dark" title="Back to Top" style="display: block;">
+                <i class="fa fa-angle-up"></i>
+            </button>
+        </div>
+        <!-- End Back to top -->
+</footer>
+
+
+
+</body>
+</html>

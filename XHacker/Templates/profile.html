@@ -1,0 +1,7 @@
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="text" name="bio">
+    <input type="text" name="website">
+    <input type="file" name="user_image">
+    <input type="submit" value="submit">
+</form>

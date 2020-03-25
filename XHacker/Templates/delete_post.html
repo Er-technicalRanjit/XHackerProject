@@ -1,0 +1,14 @@
+{% extends 'allpost.html' %}
+{% block head %}
+
+<div class="container mt-5">
+<form method="post" class="form-group text-center">
+    {% csrf_token %}
+    <label style="color: greenyellow;" class="col-form-label"><strong>Are you sure want to delete {{ post.name }} {{ post.slug }}?</strong></label>
+    <input type="submit" name="Confirm" value="Delete" class="btn btn-danger">
+    <a href="{% url 'allpost'%}"> <input type="button" value="Cancel" class="btn btn-primary"></a>
+    <p class="mt-5"><strong class="text-white">Notice!!:</strong><h5 class="text-white"> Deleted files are not recovered, so please backup your data before deleting....!!</h5></p>
+</form>
+
+</div>
+{% endblock %}

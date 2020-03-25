@@ -1,0 +1,59 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<head>
+    <style>
+        body {
+    font-size: 13px;
+}
+@media (max-width: 768px) {
+    body {
+        font-size: 12px;
+    }
+}
+
+.chat_list .list-group-item {
+    padding: 5px 4px;
+    min-height: 50px;
+}
+@media (max-width: 768px) {
+    .chat_list .list-group-item {
+        min-height: inherit;
+    }
+}
+.chat_list .list-group-item-text {
+    word-wrap: break-word;
+    display: flex;
+    overflow: auto;
+}
+.chat_list .pull-left {
+    width: 55px;
+    text-align: center;
+}
+    </style>
+</head>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/holder/2.4.1/holder.js"></script>
+<div style="padding: 20px 20% 0 20%; background-color: mediumorchid;">
+<div class="chat_list">
+    <ul class="list-group">
+        {% for mes in messages %}
+        <li class="list-group-item">
+            <div class="pull-left hidden-xs">
+                <div>
+                    <img class="img-circle" title="User1" alt="User1" data-src="holder.js/40x40/lava">                    
+                </div>
+            </div>
+            <small class="pull-right text-muted">{{ mes.sent_date }}</small>
+            <div>
+                <small class="list-group-item-heading text-muted text-primary">{{ mes.name }}</small>
+                <p class="list-group-item-text">
+                   {{ mes.message }}
+                </p>
+            </div>
+        </li>
+
+{% endfor %}
+    </ul>
+</div>
+</div>

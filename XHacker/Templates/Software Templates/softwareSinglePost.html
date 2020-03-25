@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+
+        @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500');
+
+        .blogShort{ border-bottom:1px solid #ddd;}
+.add{background: #333; padding: 10%; height: 300px;}
+
+.nav-sidebar {
+    width: 100%;
+    padding: 8px 0;
+    border-right: 1px solid #ddd;
+}
+.nav-sidebar a {
+    color: #333;
+    -webkit-transition: all 0.08s linear;
+    -moz-transition: all 0.08s linear;
+    -o-transition: all 0.08s linear;
+    transition: all 0.08s linear;
+}
+.nav-sidebar .active a {
+    cursor: default;
+    background-color: #34ca78;
+    color: #fff;
+}
+.nav-sidebar .active a:hover {
+    background-color: #37D980;
+}
+.nav-sidebar .text-overflow a,
+.nav-sidebar .text-overflow .media-body {
+    white-space: nowrap;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+
+.btn-blog {
+    color: #ffffff;
+    background-color: #37d980;
+    border-color: #37d980;
+    border-radius:0;
+    margin-bottom:10px
+}
+.btn-blog:hover,
+.btn-blog:focus,
+.btn-blog:active,
+.btn-blog.active,
+.open .dropdown-toggle.btn-blog {
+    color: white;
+    background-color:#34ca78;
+    border-color: #34ca78;
+}
+article h2{color:#333333;}
+h2{color:#34ca78;}
+ .margin10{margin-bottom:10px; margin-right:10px;}
+
+
+        h1,p,.coolass_button{
+        font-family: 'Montserrat', sans-serif;
+        display: block;
+        margin: auto;
+        width: 100%;
+        text-align: center;
+
+    }
+    h1{
+        margin-bottom: 25px;
+        font-weight: 300;
+    }
+    p{
+        font-weight: 400;
+        margin-bottom: 20px;
+    }
+button:focus {outline:0;}
+    .coolass_button{
+        width: 250px;
+        height: 100px;
+        background: linear-gradient(to right, #8365c1 0%,#8365c1 50%,#7bff56 50%,#7bff56 100%);
+        background-size: 200%;
+        border-radius: 5px;
+        border:none;
+        display: block;
+        margin: auto;
+        position: relative;
+        transition: all .5s;
+        overflow: hidden;
+        color: rgba(103, 55, 204, 0.67);
+        cursor: pointer;
+        font-weight: 500;
+        margin-top: 0px;
+    will-change:all;
+    transition-timing-function:ease;
+    }
+    .coolass_button:hover{
+        box-shadow: 0px 6px 10px
+    }
+    .coolass_button_first{
+        background-position: 100%;
+        height: 30px;
+    transform:translateY(50px);
+        color:transparent;
+    }
+    .coolass_button_bridge1{
+        background: #7bff56;
+        background-position: 0%;
+        transition: none;
+    }
+    .coolass_button_second{
+        background: linear-gradient(to right, #7bff56 0%,#7bff56 50%,#7bff56 50%,#63bc40 50%,#63bc40 50%,#63bc40 100%);
+        background-size: 200%;
+        transition: all 1.2s;
+    }
+    .coolass_button_third{
+        background-position: -100%;
+    }
+    .coolass_button_final{
+        transition: all .5s;
+        margin-top: 0px;
+        height: 100px;
+    transform:translateY(0px);
+        color:rgba(62, 117, 41, 0.61);
+    }
+    .coolass_button:after{
+        content: 'Success!';
+        position: absolute;
+        right: -100%;
+        opacity: 0;
+        width: 100%;
+        top:35%;
+        margin: 0px;
+        color: white;
+        font-size: 2em;
+        transition: all .5s;
+    }
+    .coolass_button_final:after{
+        right: 0%;
+        opacity: 1;
+    }
+    .coolass_button:before{
+        content: 'Download';
+        position: absolute;
+        left: 0%;
+        width: 100%;
+        top:35%;
+        margin: 0px;
+        color: white;
+        font-size: 2em;
+        transition: all .5s;
+    }
+    .coolass_button_first:before{
+        left: -100%;
+        opacity: 0;
+    }
+
+.cool_holder{
+  height:100px;
+}
+
+
+
+        footer {
+	margin: 50px 0;
+}
+
+
+
+.vid {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px; height: 0; overflow: hidden;
+}
+
+.vid iframe,
+.vid object,
+.vid embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.cuadro_intro_hover{
+        padding: 0px;
+		position: relative;
+		overflow: hidden;
+		height: 200px;
+	}
+	.cuadro_intro_hover:hover .caption{
+		opacity: 1;
+		transform: translateY(-150px);
+		-webkit-transform:translateY(-150px);
+		-moz-transform:translateY(-150px);
+		-ms-transform:translateY(-150px);
+		-o-transform:translateY(-150px);
+	}
+	.cuadro_intro_hover img{
+		z-index: 4;
+	}
+	.cuadro_intro_hover .caption{
+		position: absolute;
+		top:150px;
+		-webkit-transition:all 0.3s ease-in-out;
+		-moz-transition:all 0.3s ease-in-out;
+		-o-transition:all 0.3s ease-in-out;
+		-ms-transition:all 0.3s ease-in-out;
+		transition:all 0.3s ease-in-out;
+		width: 100%;
+	}
+	.cuadro_intro_hover .blur{
+		background-color: rgba(0,0,0,0.7);
+		height: 300px;
+		z-index: 5;
+		position: absolute;
+		width: 100%;
+	}
+	.cuadro_intro_hover .caption-text{
+		z-index: 10;
+		color: #fff;
+		position: absolute;
+		height: 300px;
+		text-align: center;
+		top:-20px;
+		width: 100%;
+	}
+
+
+
+    </style>
+
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+	<link href="css/font-awesome.css" rel="stylesheet" type="text/css">
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<script src="https://use.fontawesome.com/07b0ce5d10.js"></script>
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+</head>
+<body>
+
+
+
+
+<!------ Include the above in your HEAD tag ---------->
+
+
+
+<nav class="navbar navbar-inverse" >
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><img src="https://lh3.googleusercontent.com/-N4NB2F966TU/WM7V1KYusRI/AAAAAAAADtA/fPvGVNzOkCo7ZMqLI6pPITE9ZF7NONmawCJoC/w185-h40-p-rw/logo.png"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="/">Home</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="{% url 'softwareMainPage' %}">All Page <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="">Computer Software</a></li>
+            <li><a href="#">Mobile Software</a></li>
+            <li><a href="#">Hotstar Premium</a></li>
+          </ul>
+        </li>
+        <li><a href="/software">All Software</a></li>
+        <li><a href="/allpost">Forum</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+
+          {% if user.is_anonymous %}
+        <li><a href="{% url 'signup' %}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="{% url 'signin' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          {% endif %}
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+
+
+<div class="container">
+	<div class="row">
+	         <div class="col-sm-2 paddingTop20">
+            <nav class="nav-sidebar">
+                <ul class="nav">
+                    <li class="active bg-primary"><span class="glyphicon glyphicon-star"></span> Latest Post</li>
+                    {% for allpst in allpost|slice:'5' %}
+                   <a href="/software/{{ allpst.id }}/{{ allpst.slug }}">{{ allpst.id }}) {{ allpst.software_name|truncatechars:'30' }}</a></li><br>
+                   {% endfor %}
+                    <li class="nav-divider"></li>
+                    {% if user.is_anonymous %}
+                    <li><a href="javascript:;"><i class="glyphicon glyphicon-off"></i> Sign in</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+                      <div><h2 class="add" style="color: white">Showing ads</h2></div>
+        </div>
+
+     <div class="col-md-10 blogShort">
+                     <h1 style="font-family: 'Arial Black'; margin-bottom: 5vh;">{{ post.software_name }}</h1>
+                     <img src="{{ post.image1.url }}" width="500vw" alt="post img" class="pull-left img-responsive postImg img-thumbnail margin10">
+                     <article><p>
+                         {{ post.soft_desc1 }}
+                         </p>
+                     <p>
+                         {{ post.soft_desc2 }}
+                         </p>
+
+                         <h3></h3>
+                          <br>
+
+                         {% if post.image2 %}
+                       <img src=" {{ post.image2.url }}" class="img-fluid" style="margin-top: 5vh; margin-bottom: 5vh;" width="100%" height="100%">
+                         {% endif %}
+                     <h1>Step to Crack:</h1>
+                         <p>
+                         {{ post.soft_desc1 }}
+                         </p>
+
+                       <p>
+                        {{ post.soft_desc2 }}
+                         </p>
+
+
+
+                     </article>
+<div class="cool_holder" style="margin-bottom: 5vh;">
+      <button class="coolass_button"  id="coolbutton"> </button>
+     </div>
+
+                 </div>
+	</div>
+
+
+
+<!-- the comment box -->
+
+<div class="col-lg-12" style="margin-top: 5vh; margin-bottom: 10vh;   ">
+
+
+                <!-- the comments -->
+    <div class="row bootstrap snippets">
+    <div class="col-md-12 col-md-offset-0 col-sm-12">
+        <div class="comment-wrapper">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    Leave a comment!!!
+                </div>
+                <div class="panel-body">
+                    <form method="post" action="" enctype="multipart/form-data">
+                        {% csrf_token %}
+                    <textarea class="form-control" name="review" placeholder="write a comment..." rows="3"></textarea>
+                    <br>
+                    <button type="submit" class="btn btn-info pull-right">Post</button>
+                        </form>
+                    <div class="clearfix"></div>
+                    <hr>
+                    <ul class="media-list">
+                        {% for rv in reviews|slice:'10' %}
+                        <li class="media" style="margin-bottom: 5vh;">
+                            <a href="#" class="pull-left">
+                                <img src="https://bootdey.com/img/Content/user_1.jpg" alt="" class="img-circle">
+                            </a>
+                            <div class="media-body">
+                                <span class="text-muted pull-right">
+                                    <small class="text-muted">: {{rv.review_date}}</small>
+                                </span>
+                                <strong class="text-success">@{{ rv.posted_user }}t</strong>
+                                <p>
+                                    {{ rv.review }}
+                                </p>
+                            </div>
+                        </li>
+                        {% endfor %}
+                    <p>See total comments({{ reviews.count }})</p>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+</div>
+
+</div>
+<h4 style="text-align: center; font-family: 'Arial Black'; margin-bottom: 5vh;" >Also Check Below Post</h4>
+{% for p in allpost %}
+<div class="col-lg-3">
+    				<div class="cuadro_intro_hover " style="background-color:#cccccc;">
+						<p style="text-align:center; margin-top:20px;">
+
+							<a href="/software/{{ p.id }}/{{ p.slug }}"> <img src="{{ p.image1.url }}" class="img-responsive" alt=""></a>
+						</p>
+						<div class="caption">
+							<div class="blur"></div>
+							<div class="caption-text">
+                                <a href="/software/{{ p.id }}/{{ p.slug }}" style="text-decoration: none; color: white;"><h3 style="border-top:2px solid white; border-bottom:2px solid white; padding:10px;">{{ p.software_name }}</h3></a>
+								<p>{{ p.soft_desc1|truncatechars:'100' }}</p>
+								<a class=" btn btn-primary" href="/software/{{ p.id }}/{{ p.slug }}"><span class="glyphicon glyphicon-plus"> VISIT</span></a>
+							</div>
+						</div>
+					</div>
+
+	    </div>
+{% endfor %}
+
+
+            <div class="col-lg-3 col-md-4">
+			<h3>Categories:</h3>
+                <ul>
+				<li><a href=""><i class="fa fa-file"></i> News</a></li>
+				<li><a href=""><i class="fa fa-android"></i> Android</a></li>
+				<li><a href=""><i class="fa fa-code"></i> C#</a></li>
+				<li><a href=""><i class="fa fa-code"></i> Java</a></li>
+				<li><a href=""><i class="fa fa-book"></i> Books</a></li>
+				<li><a href=""><i class="fa fa-globe"></i> Web</a></li>
+				<li><a href=""><i class="fa fa-windows"></i> Windows</a></li>
+				</ul>
+            </div>
+
+            <div class="col-lg-3 col-md-4">
+                <h3>Contact:</h3>
+				<p>Have a question or feedback? Contact me!
+                <a href="/contactUs" title="Contact me!"><i class="fa fa-envelope"></i>Contact</a></p>
+
+            <h3>Follow:</h3>
+
+
+<a href="http://twitter.com/xhacker01" id="gh" target="_blank" title="Twitter"><span class="fa-stack fa-lg">
+  <i class="fa fa-square-o fa-stack-2x"></i>
+  <i class="fa fa-twitter fa-stack-1x"></i>
+</span>
+Twitter</a>
+<a href="http://github.com/xhacker"  target="_blank" title="GitHub"><span class="fa-stack fa-lg">
+  <i class="fa fa-square-o fa-stack-2x"></i>
+  <i class="fa fa-github fa-stack-1x"></i>
+</span>
+GitHub</a>
+
+
+
+
+
+
+			</div>
+			<br/>
+
+
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+<div class="g-plusone" data-annotation="inline" data-width="300" data-href=""></div>
+
+<!-- Helyezd el ezt a címkét az utolsó +1 gomb címke mögé. -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/platform.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+			<br/>
+
+				<hr>
+                    <p>Copyright © H-Hacker | <a href="{% url 'privacy_policy' %}">Privacy Policy</a> | <a href="{% url 'TermsAndCondition' %}">Terms of Use</a></p>
+
+
+
+        </footer>
+
+
+
+
+
+
+<script>
+
+    /*
+Based on a Pablo Stanley (https://medium.com/@pablostanley) design
+*/
+
+var coolbutton = document.getElementById('coolbutton');
+    var inprogress = false;
+    coolbutton.onclick = function(){
+        if (inprogress) {
+            return false;
+        }
+        inprogress = true
+        coolbutton.classList.add('coolass_button_first');
+        setTimeout(function(){
+        coolbutton.classList.add('coolass_button_bridge1');
+        },500);
+        setTimeout(function(){
+        coolbutton.classList.add('coolass_button_second');
+        },600);
+        setTimeout(function(){
+        coolbutton.classList.add('coolass_button_third');
+        },700);
+        setTimeout(function(){
+        coolbutton.classList.add('coolass_button_final');
+        },1800);
+        setTimeout(function(){
+            coolbutton.classList.remove('coolass_button_final');
+            coolbutton.classList.remove('coolass_button_third');
+            coolbutton.classList.remove('coolass_button_second');
+            coolbutton.classList.remove('coolass_button_bridge1');
+            coolbutton.classList.remove('coolass_button_first');
+            inprogress = false;
+            window.location="{{ post.download_link }}";
+        },3200)
+    };
+
+
+</script>
+</body>
+</html>
+
+
